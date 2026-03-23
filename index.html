@@ -2,16 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <meta name="theme-color" content="#121212">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="HSPU Plan">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    <link rel="manifest" href='data:application/manifest+json,{"name":"L-Sit to HSPU Blueprint","short_name":"HSPU Plan","display":"standalone","background_color":"#121212","theme_color":"#121212"}'>
+
     <title>L-Sit to HSPU: Master Blueprint</title>
     <style>
         :root {
-            --primary-color: #2c3e50;
-            --accent-color: #d35400;
-            --bg-color: #f4f7f6;
-            --card-bg: #ffffff;
-            --text-main: #333333;
-            --text-muted: #666666;
+            /* Dark Theme Colors */
+            --primary-color: #4da8da; /* Light blue that pops on dark backgrounds */
+            --accent-color: #ff9800;  /* Vibrant orange for warnings/hacks */
+            --bg-color: #121212;      /* Deep dark background */
+            --card-bg: #1e1e1e;       /* Slightly lighter for cards */
+            --text-main: #e0e0e0;     /* Soft white for readability */
+            --text-muted: #9e9e9e;    /* Grey for secondary text */
+            --border-color: #333333;  /* Subtle borders */
         }
 
         body {
@@ -21,16 +32,20 @@
             line-height: 1.6;
             margin: 0;
             padding: 20px;
+            /* Prevents pull-to-refresh on mobile apps */
+            overscroll-behavior-y: none; 
         }
 
         .container {
             max-width: 800px;
             margin: 0 auto;
+            padding-bottom: 40px;
         }
 
         header {
             text-align: center;
             margin-bottom: 40px;
+            padding-top: 20px;
         }
 
         h1 {
@@ -47,10 +62,10 @@
 
         .card {
             background: var(--card-bg);
-            border-radius: 10px;
+            border-radius: 12px;
             padding: 25px;
             margin-bottom: 25px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
             border-top: 5px solid var(--primary-color);
         }
 
@@ -61,7 +76,7 @@
         h2 {
             color: var(--primary-color);
             margin-top: 0;
-            border-bottom: 2px solid var(--bg-color);
+            border-bottom: 1px solid var(--border-color);
             padding-bottom: 10px;
         }
 
@@ -88,30 +103,35 @@
         th, td {
             padding: 12px;
             text-align: left;
-            border-bottom: 1px solid #e0e0e0;
+            border-bottom: 1px solid var(--border-color);
         }
 
         th {
-            background-color: var(--primary-color);
-            color: white;
+            background-color: #2c2c2c;
+            color: var(--primary-color);
             font-weight: 600;
         }
 
         tr:nth-child(even) {
-            background-color: #f9f9f9;
+            background-color: #252525;
         }
 
         .phase-box {
-            background-color: var(--bg-color);
+            background-color: #252525;
             padding: 15px;
             border-radius: 8px;
             margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .hack-list {
+            padding-left: 0;
         }
 
         .hack-list li {
-            background: #fff3e0;
-            padding: 10px;
-            border-radius: 5px;
+            background: #2a2218; /* Dark tinted orange */
+            padding: 15px;
+            border-radius: 8px;
             margin-bottom: 10px;
             border-left: 4px solid var(--accent-color);
             list-style-type: none;
@@ -130,13 +150,13 @@
 
 <div class="container">
     <header>
-        <h1>L-Sit to HSPU Blueprint</h1>
-        <p>The Hybrid Training System for Climbers, Runners, and Parents</p>
+        <h1>L-Sit to HSPU</h1>
+        <p>The Hybrid Training System</p>
     </header>
 
     <div class="card accent">
         <h2>1. The "Newborn" RPE Compass</h2>
-        <p>Check this every morning. Be honest with your energy levels.</p>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">Check this every morning. Be honest with your energy levels.</p>
         <table>
             <tr>
                 <th>Sleep Quality</th>
@@ -162,8 +182,8 @@
     </div>
 
     <div class="card">
-        <h2>2. Mandatory 10-Minute Warmup</h2>
-        <p><em>Do this before every Workout A, Workout B, or Bouldering session.</em></p>
+        <h2>2. Mandatory 10-Min Warmup</h2>
+        <p style="color: var(--text-muted); font-size: 0.9rem;"><em>Before every Workout A, Workout B, or Bouldering session.</em></p>
         <ul>
             <li><strong>Wrist Circles:</strong> 15 reps each way.</li>
             <li><strong>Finger Pulses:</strong> Tabletop position, lift palms while keeping fingers down (2 x 15).</li>
@@ -224,7 +244,7 @@
 
         <div class="phase-box">
             <h3>Phase 1: The Foundation (Weeks 1–6)</h3>
-            <p><em>Goal: Build structural integrity in shoulders and core compression.</em></p>
+            <p style="color: var(--text-muted); font-size: 0.9rem;"><em>Goal: Build structural integrity in shoulders and core.</em></p>
             <strong>Workout A (Pressing):</strong>
             <ul>
                 <li>Pike Pushups (Floor): 3 x 8–10</li>
@@ -235,13 +255,13 @@
             <ul>
                 <li>Tucked L-Sit (on chairs/blocks): 4 x Max Hold</li>
                 <li>Hollow Body Holds: 4 x 30s</li>
-                <li>Wall Walks: 5 reps (Walk feet up wall to HS, then back down)</li>
+                <li>Wall Walks: 5 reps (Walk up wall to HS, then down)</li>
             </ul>
         </div>
 
         <div class="phase-box">
             <h3>Phase 2: The Vertical Build (Weeks 7–12)</h3>
-            <p><em>Goal: Move weight to the wall and straighten the legs.</em></p>
+            <p style="color: var(--text-muted); font-size: 0.9rem;"><em>Goal: Move weight to the wall and straighten the legs.</em></p>
             <strong>Workout A (Pressing):</strong>
             <ul>
                 <li>Decline Pike Pushups (Feet elevated): 4 x 8</li>
@@ -258,7 +278,7 @@
 
         <div class="phase-box">
             <h3>Phase 3: The Integration (Weeks 13–20)</h3>
-            <p><em>Goal: Transitioning from L-sit to the press.</em></p>
+            <p style="color: var(--text-muted); font-size: 0.9rem;"><em>Goal: Transitioning from L-sit to the press.</em></p>
             <strong>Workout A (Pressing):</strong>
             <ul>
                 <li>Deep Pike Pushups (Hands on blocks): 4 x 8</li>
@@ -284,8 +304,8 @@
     </div>
 
     <div class="card">
-        <h2>6. Post-Climb "Pre-Hab" (Saturday Cool-down)</h2>
-        <p><em>Essential to prevent "Climber's Elbow".</em></p>
+        <h2>6. Post-Climb "Pre-Hab" (Saturday)</h2>
+        <p style="color: var(--text-muted); font-size: 0.9rem;"><em>Essential to prevent "Climber's Elbow".</em></p>
         <ul>
             <li><strong>Wrist Extensions:</strong> 3 x 15 (Light weight/water bottle).</li>
             <li><strong>Hammer Rotations:</strong> 3 x 12 (Pronation/Supination).</li>
@@ -294,7 +314,16 @@
         </ul>
     </div>
 
+    <div class="card accent">
+        <h2>7. The "Newborn" Lifestyle Hacks</h2>
+        <ul class="hack-list">
+            <li><strong>The "Doorframe Rule":</strong> Every time you walk through the nursery door, do a 20-second Wall Handstand.</li>
+            <li><strong>The "Pram" Shrug:</strong> When walking with the stroller, lock your arms and push the handle down to "shrug" your shoulders away from your ears.</li>
+            <li><strong>Tummy Time Plank:</strong> When the baby is on the floor, do your Hollow Body Holds or Planks right next to them.</li>
+        </ul>
+    </div>
+
 </div>
 
-</body>
-</html>
+</body </html>
+            
